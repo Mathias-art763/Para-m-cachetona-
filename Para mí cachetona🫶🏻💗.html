@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi cachetona 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            animation: bgChange 10s infinite alternate;
+        }
+        @keyframes bgChange {
+            0% { background: linear-gradient(to right, #ff9a9e, #fad0c4); }
+            50% { background: linear-gradient(to right, #a18cd1, #fbc2eb); }
+            100% { background: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: beat 1s infinite;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .heart {
+            font-size: 2em;
+            animation: beat 1s infinite;
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px auto;
+            max-width: 600px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        iframe {
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi noviecita linda🫶🏻💖</h1>
+    <div id="messages">
+        <p class="message">Eres mi alegría y mi sonrisa 🫶🏻</p>
+        <p class="message">Cada momento contigo es mágico ✨</p>
+        <p class="message">Siempre quiero verte feliz 💕</p>
+        <p class="message">Gracias por ser tú, mi mundo 🌎❤️</p>
+    </div>
+    <div class="heart">❤️</div>
+
+    <!-- Video de YouTube embebido seguro -->
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/x-0KoCAV4mc?autoplay=0&controls=1" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+
+    <script>
+        // Mensajes animados
+        const messages = document.querySelectorAll('.message');
+        let index = 0;
+
+        function showMessage() {
+            messages.forEach(msg => msg.style.opacity = 0);
+            messages[index].style.opacity = 1;
+            index = (index + 1) % messages.length;
+        }
+
+        showMessage();
+        setInterval(showMessage, 4000);
+    </script>
+</body>
+</html>
